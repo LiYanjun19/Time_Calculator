@@ -1,0 +1,3 @@
+clockin = input("enter")
+
+def 
