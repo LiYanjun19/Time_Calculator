@@ -1,7 +1,25 @@
+import subprocess, sys
 import math
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
+
+root = tk.Tk()
+'''p = subprocess.Popen(["pwsh.exe", "D:\envs\Time_Calculator\Powershell\clockout.ps1"], stdout=sys.stdout)
+p.communicate()
+'''
+canvas1 = tk.Canvas(root, width=400, height=300)
+canvas1.pack()
+entry1 = tk.Entry(root)
+entry2 = tk.Entry(root)
+entry3 = tk.Entry(root)
+canvas1.create_window(200,140,window=entry1)
+
+def calculate_clockout_time():
+    time_start
+    return clockout_time
+
+button1 = tk.Button(text='Get clockout time', command=calculate_clockout_time)
 
 class window( Frame ):
     def __init__( self ):
@@ -24,6 +42,6 @@ class karl2(Frame):
     def close_window(self):
         self.destroy()
 def main(): 
-    karl().mainloop()
+    window().mainloop()
 if __name__ == '__main__':
     main()
