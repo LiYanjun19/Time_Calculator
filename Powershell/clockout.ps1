@@ -23,8 +23,18 @@ switch ($minutes_worked) {
 
 # calculate time left to work (time difference between 8 hours and time worked)
 $minutes_left = 60 - $minutes_worked
-
+switch ($minutes_left) {
+	{$_ -eq 0} {$hours_left = 8 - $hours_worked; break}
+	{$_ -gt 0} {$hours_left = 7 - $hours_worked}
+}
 
 # calculate clock out time (sum of time left to work and lunch end)
+$clockout_minute = $end_minute + $minutes_left
+switch ($clockout_minute) {
+	{$_ -eq 0} {$clockout_hour = $end_hour + $hours_left}
+	{$_ -ge 60} {$clockout_minute = [string](($end_minute + $minutes_left) % 60); $clockout_hour = $end_hour + $hours_left + 1}
+}
 
 # display clock-out time
+$clockout_time = [string]($clockout_hour * 100 + $clockout_minute)
+write-host "Clockout at $($clockout_time.substring(0,2)):$($clockout_time.substring(2))"
