@@ -1,7 +1,7 @@
 # powershell script for clocking out
 
 # read user input for clock in time, lunch start, and lunch end
-write "use 24hr format.`npress enter after each input.`n enter:"
+write-host "use 24hr format.`npress enter after each input.`n enter:"
 $prompts = ("(1/3) clock-in time", "(2/3) lunch start time", "(3/3) lunch end time")
 $times = @()
 foreach ($prompt in $prompts) {$times += read-host $prompt}
