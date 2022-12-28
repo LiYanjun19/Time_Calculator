@@ -128,7 +128,7 @@ breaktime = HourMin(lunchbreak_hour, lunchbreak_min)
 
 ## init inputs
 clockin, lb_start, lb_end, clockout, mode= input_init(clock_in, lunchbreak_start, lunchbreak_end, clock_out)
-print(clockin.hour, clockin.min,lb_start.hour, lb_start.min, lb_end.hour, lb_end.min, clockout.hour, clockout.min, mode)
+
 
 ## calculate 
 match mode:
