@@ -1,2 +1,2 @@
 # Time_Calculator
- Description: For calculating the clockout time with 8hrs working time and 30min lunch break requirement. 
+Description: For calculating the lunch break or clockout time with any worktime and lunch break requirement. 
